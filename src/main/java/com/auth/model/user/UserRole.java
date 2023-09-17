@@ -3,9 +3,9 @@ package com.auth.model.user;
 public enum UserRole {
 
     ADMIN("admin"),
-    BASIC("basic");
+    USER("user");
 
-    private String role;
+    private final String role;
 
     UserRole(String role) {
         this.role = role;

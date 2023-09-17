@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,16 +18,18 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Slf4j
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String login;
 
     private String password;
 
+    @Enumerated(EnumType.STRING)
     private UserRole role;
 
     public User(String login, String password, UserRole role) {
@@ -39,8 +42,6 @@ public class User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if (this.role == UserRole.ADMIN) {
             return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
-        } else if (this.role == UserRole.BASIC) {
-            return List.of(new SimpleGrantedAuthority("ROLE_USER"));
         } else {
             return List.of(new SimpleGrantedAuthority("ROLE_USER"));
         }

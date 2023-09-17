@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("person")
 public class PersonController {
 
     private PersonService personService;
@@ -33,7 +34,7 @@ public class PersonController {
     }
 
     @PostMapping
-    public ResponseEntity<Person> createPerson(@RequestBody  Person person) {
+    public ResponseEntity<Person> createPerson(@RequestBody Person person) {
         personService.createPerson(person);
 
         return new ResponseEntity<>(person, HttpStatus.CREATED);
