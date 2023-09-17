@@ -1,7 +1,6 @@
 package com.auth.service.impl;
 
-import com.auth.model.Person;
-import org.springframework.stereotype.Service;
+import com.auth.model.person.Person;
 
 import java.util.List;
 

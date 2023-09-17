@@ -1,4 +1,4 @@
-package com.auth.model;
+package com.auth.model.person;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,8 +15,8 @@ import lombok.*;
 public class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
     private String name;
 
