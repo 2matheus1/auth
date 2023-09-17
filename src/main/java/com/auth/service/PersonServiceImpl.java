@@ -1,6 +1,6 @@
 package com.auth.service;
 
-import com.auth.model.Person;
+import com.auth.model.person.Person;
 import com.auth.repository.PersonRepository;
 import com.auth.service.impl.PersonService;
 import lombok.AllArgsConstructor;

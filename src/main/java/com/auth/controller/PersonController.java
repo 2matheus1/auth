@@ -1,13 +1,12 @@
 package com.auth.controller;
 
-import com.auth.model.Person;
+import com.auth.model.person.Person;
 import com.auth.service.impl.PersonService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.URI;
 import java.util.List;
 
 @RestController

@@ -1,4 +1,4 @@
-package com.auth.model;
+package com.auth.model.person;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
